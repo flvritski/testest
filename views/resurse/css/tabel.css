@@ -1,0 +1,40 @@
+th td tr {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+thead tbody {
+  border-bottom: 3px solid;
+}
+
+td:nth-child(even) {
+  border: 2px solid #1A123D;
+}
+td:nth-child(odd) {
+  border: 2px solid red;
+}
+
+tr:hover td {
+  -moz-box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  transition: box-shadow 0.5s ease-in-out;
+}
+tr:hover td:first-child {
+  -moz-box-shadow: 4px 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 4px 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 4px 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+}
+tr:hover td:last-child {
+  -moz-box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.5) inset;
+}
+
+#tab-orar {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=tabel.css.map */

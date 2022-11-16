@@ -1,0 +1,105 @@
+.worko-tabs {
+	margin: 20px;
+	width: 80%;
+}
+.state {
+	position: absolute;
+	left: -10000px;
+}
+.flex-tabs {
+	display: block;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.tab {
+	flex-grow: 1;
+	max-height: 40px;
+	display: inline-block;
+	padding: 10px;
+	vertical-align: top;
+	background-color: #6AB1FC;
+	cursor: hand;
+	cursor: pointer;
+	border-left: 10px solid #1A2B3D;
+	border-bottom: 10px solid #1A2B3D;
+	transition: 1s;
+	border-radius: 20px;
+	&:hover {
+		background-color: rgb(107, 229, 131);
+	}
+}
+.panel {
+	background-color: #9e343400;
+	min-height: 300px;
+	display: none;
+	width: 100%;
+	flex-basis: auto;
+}
+#tab-one {
+	&:checked {
+		~ {
+			.tabs {
+				#tab-one-label {
+					background-color: white;
+					cursor: default;
+					border-left-color: black;
+					border-bottom-color: black;
+				}
+				#tab-one-panel {
+					display: block;
+				}
+			}
+		}
+	}
+}
+#tab-two {
+	&:checked {
+		~ {
+			.tabs {
+				#tab-two-label {
+					background-color: white;
+					cursor: default;
+					border-left-color: black;
+					border-bottom-color: black;
+				}
+				#tab-two-panel {
+					display: block;
+				}
+			}
+		}
+	}
+}
+#tab-three {
+	&:checked {
+		~ {
+			.tabs {
+				#tab-three-label {
+					background-color: white;
+					cursor: default;
+					border-left-color: black;
+					border-bottom-color: black;
+				}
+				#tab-three-panel {
+					display: block;
+				}
+			}
+		}
+	}
+}
+#tab-four {
+	&:checked {
+		~ {
+			.tabs {
+				#tab-four-label {
+					background-color: white;
+					cursor: default;
+					border-left-color: black;
+					border-bottom-color: black;
+				}
+				#tab-four-panel {
+					display: block;
+				}
+			}
+		}
+	}
+}

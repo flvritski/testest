@@ -1,0 +1,137 @@
+#watermark,#absolut{
+    display:none;
+}
+
+
+
+@media print {
+
+#tel, #email, #wapp, #ehomerecords{
+    text-decoration: none;
+    color: black;
+}
+
+#link-top{
+    display: none;
+}
+video, iframe, img, figcaption, .footer-top  {
+    display: none;
+}
+
+ul.meniu{
+    display: block;
+    padding-left: 50px;
+    list-style-type: disc;
+
+}
+
+ul.meniu li {
+    border: none;
+    list-style-type: disc;
+    display: list-item;
+    padding-left: 20px;
+    overflow: visible;
+    text-align: left;
+}
+
+
+#absolut{
+    position: absolute;
+    display: inline-block;
+    top:90%;
+    width: 70%;
+    height:20px;
+    left: 30%;
+    overflow: visible;
+}
+#absolut::after{
+    content:"Element poziționat absolut pe prima pagină.Pentru a vedea stilul de printare apăsați Ctrl+P.";
+    position: absolute;
+    font-size:10px;
+    border:4px double black ;
+    border-style: inset;
+    width:70%;
+    height:35px;
+    margin-left: auto;
+    display: inline-block;
+}
+
+h1{
+    page-break-after: always;
+    margin-top: 50%;
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+}
+#grid-zona-1, #grid-zona-2-3-4, #grid-zona-8, #grid-zona-5-6-7{
+    font-size: 10px;
+    box-sizing:border-box;
+    page-break-before:always;
+    background-color: white;
+    /*
+        grid-template-rows: calc(100vh - 10px) 100vh 100vh 100vh;*/
+
+    display:block;
+    }
+    html, body {
+    width: 210mm;
+    /* height: 297mm; */
+    /*height: 282mm;*/
+            overflow:visible !important;
+    }
+/* #grid-pag div:nth-child(5){
+    
+    page-break-before:always;
+} */
+
+
+    #watermark
+    {
+        display: block;
+        position: fixed;/*apare pe toate paginile*/
+        bottom:0;
+        color:rgba(0,0,0,0.4);
+        right:0;
+        width: 4cm;
+        height: 1cm;
+    }
+    #watermark::after{
+        
+        opacity:0.4;
+        padding:5px;
+        display: block;
+        background: white;
+        border:2px solid black;
+        border-top-left-radius:10px;
+        border-bottom-left-radius:10px;
+        border-right:none;
+        content:"Stefan Florin";
+        
+    }
+    p{
+        font-weight: bold;
+    }
+
+#footer{
+    page-break-before: always;
+}
+}
+
+@page {
+    size: A4 portrait;
+    margin-bottom:2cm;
+    margin-top:2cm;
+    counter-increment: page;
+        
+}
+@page:left{
+
+    margin-left:3cm;
+    margin-right:1cm;
+    border-radius: 20cm;
+}
+@page:right{
+
+    margin-right:3cm;
+    margin-left:1cm;
+}

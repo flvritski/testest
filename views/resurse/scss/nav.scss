@@ -1,0 +1,205 @@
+@keyframes animatie_submeniu {
+	50% {
+		transform: scale(0.5, 1);
+	}
+	100% {
+		transform: scale(1, 1);
+		opacity: 1;
+	}
+}
+@keyframes in-out {
+	0% {
+		transform: translateX(-100%);
+	}
+	45%,55% {
+/*to stay a while full width*/
+		transform: translateX(0);
+	}
+}
+@keyframes hamburger {
+	0% {
+		transform: scale(0.5);
+	}
+	45%,55% {
+/*to stay a while full width*/
+		transform: scale(1);
+	}
+}
+body {
+	--inaltime-meniu: 25px;
+	--latime-buton: 100px;
+	--culoare-meniu: rgb(255, 255, 255);
+	--culoare-meniu-selectat: #6A49FC;
+	--latime-bord-meniu: 1px;
+}
+.fa-solid {
+	display: inline-block;
+}
+ul.meniu {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	position: relative;
+	li {
+		a {
+			display: block;
+			height: 100%;
+			&:hover {
+				background-color: var(--culoare-meniu-selectat);
+			}
+		}
+		div {
+			&:hover {
+				background-color: var(--culoare-meniu-selectat);
+				box-shadow: inset 0 0 10px black;
+			}
+			a {
+				&:hover {
+					box-shadow: inset 0 0 10px black;
+				}
+			}
+		}
+	}
+	>li {
+		height: var(--inaltime-meniu);
+		overflow: hidden;
+		line-height: var(--inaltime-meniu);
+		vertical-align: middle;
+		border: var(--latime-bord-meniu) solid black;
+		width: var(--latime-buton);
+		text-align: center;
+		position: relative;
+		&:hover {
+			ul {
+				animation-name: animatie_submeniu;
+				animation-duration: 2s;
+				animation-timing-function: linear;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			overflow: visible;
+		}
+	}
+	ul {
+		list-style-type: none;
+		z-index: 10;
+		position: absolute;
+		left: -1px;
+		padding: 0;
+		margin: 0;
+		transform: scale(0.5, 0);
+		transform-origin: 50% 0;
+		opacity: 1;
+		width: 100%;
+		li {
+			height: var(--inaltime-meniu);
+			border: var(--latime-bord-meniu) solid black;
+			width: var(--latime-buton);
+			position: relative;
+		}
+	}
+	a {
+		color: black;
+		cursor: pointer;
+		font-weight: bold;
+		transition: all 1s linear;
+		background-color: var(--culoare-meniu);
+		text-decoration: none;
+	}
+	div {
+		color: black;
+		cursor: pointer;
+		font-weight: bold;
+		transition: all 1s linear;
+		background-color: var(--culoare-meniu);
+		text-decoration: none;
+	}
+}
+nav {
+	background-color: var(--culoare-meniu);
+	display: block;
+	position: relative;
+}
+.fa-long-arrow-right {
+	display: none;
+}
+label {
+	display: none;
+	height: var(--inaltime-meniu);
+}
+#toggle {
+	display: none;
+}
+#hamburger {
+	img {
+		height: 100%;
+		width: auto;
+	}
+}
+@media screen and (max-width: 640px) {
+	ul.meniu {
+		font-size: 10px;
+	}
+	.fa-home {
+		display: inline-block;
+	}
+	a {
+		&:hover {
+			.fa-long-arrow-right {
+				display: inline-block;
+				animation-name: in-out;
+				animation-duration: 2s;
+			}
+		}
+	}
+	.Acasa {
+		display: none;
+	}
+}
+@media screen and (min-width: 641px) {
+	.fa-home {
+		display: none;
+	}
+	.Acasa {
+		display: inline-block;
+	}
+}
+@media screen and (max-width:350px) {
+	label {
+		display: block;
+		cursor: pointer;
+		width: 25px;
+		float: left;
+		background-color: white;
+	}
+	ul.meniu {
+		text-align: center;
+		width: 100%;
+		display: none;
+		clear: left;
+		li {
+			display: block;
+			border-bottom: solid 1px black;
+			margin: 0;
+			color: yellow;
+			background-color: black;
+			width: 100%;
+			animation: hamburger 2s;
+		}
+		ul {
+			li {
+				width: 100%;
+			}
+		}
+	}
+	#toggle {
+		&:checked {
+			+ {
+				ul.meniu {
+					display: block;
+				}
+			}
+		}
+	}
+}

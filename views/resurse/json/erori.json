@@ -1,0 +1,40 @@
+{
+    "cale_baza": "resurse/imagini/erori",
+    "eroare_default":{
+        "titlu":"Error",
+        "text": "A survenit eroare.",
+        "imagine":"interzis.png"
+    },
+    "info_erori": [
+        {
+            "identificator":404,
+            "status":true,
+            "titlu":"404",
+            "text": "Not found",
+            "imagine":"404.jpeg"
+        },
+        {
+            "identificator":403,
+            "status":true,
+            "titlu":"403",
+            "text": "Forbidden",
+            "imagine":"403.png"
+        },
+        
+        {
+            "identificator":1,
+            "status":false,
+            "titlu":"Site în lucru",
+            "text": "Muncim, muncim!",
+            "imagine":"interzis.png"
+        },
+        
+        {
+            "identificator":2,
+            "status":false,
+            "titlu":"Eroare baza date",
+            "text": "Reveniti mai tarziu!",
+            "imagine":"interzis.png"
+        }
+    ]
+}
